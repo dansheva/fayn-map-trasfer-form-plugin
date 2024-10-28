@@ -1,11 +1,15 @@
-import "./App.css";
+import { Libraries, useLoadScript } from "@react-google-maps/api";
+import { DirectionSection } from "./components";
 
-function App() {
-  return (
-    <div className="h-80">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
-  );
-}
+const libraries: Libraries = ["places"];
+
+const App = () => {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyCpQbYP2X06eR2RJKrBxTy387o2zipmOTQ",
+    libraries,
+  });
+
+  return isLoaded ? <DirectionSection /> : <div>Saniok lox</div>;
+};
 
 export default App;
