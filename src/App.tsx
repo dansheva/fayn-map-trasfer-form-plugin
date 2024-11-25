@@ -1,15 +1,7 @@
-import { Libraries, useLoadScript } from "@react-google-maps/api";
-import { DirectionSection } from "./components";
-
-const libraries: Libraries = ["places"];
+import { GoogleMapsLoader } from "./components/GoogleMapsLoader";
 
 const App = () => {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCpQbYP2X06eR2RJKrBxTy387o2zipmOTQ",
-    libraries,
-  });
-
-  return isLoaded ? <DirectionSection /> : <div>Saniok lox</div>;
+  return <GoogleMapsLoader />;
 };
 
 export default App;

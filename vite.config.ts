@@ -12,5 +12,6 @@ export default defineConfig({
     rollupOptions: {
       input: "./src/main.tsx",
     },
+    minify: false,
   },
 });
